@@ -1,5 +1,5 @@
 require('lazy').setup({
-    spec="paakkis.kickstart.plugins",
+    spec="paakkis.plugins",
     change_detection = { notify = false }
 }, {
   ui = {
@@ -19,8 +19,4 @@ require('lazy').setup({
       lazy = '💤 ',
     },
   },
-})
-require('lazy').setup({
-    spec="paakkis.custom.plugins",
-    change_detection = { notify = false }
 })
