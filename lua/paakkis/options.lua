@@ -1,6 +1,6 @@
 vim.opt.number = true
 vim.opt.relativenumber = true
-vim.opt.guicursor = ""
+vim.opt.guicursor = ''
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
@@ -12,7 +12,7 @@ vim.opt.mouse = 'a'
 vim.opt.showmode = false
 
 vim.schedule(function()
-  vim.opt.clipboard = 'unnamedplus'
+  vim.opt.clipboard = 'unnamed'
 end)
 
 vim.opt.breakindent = true
