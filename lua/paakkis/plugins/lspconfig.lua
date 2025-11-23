@@ -235,6 +235,21 @@ return {
             },
           },
         },
+        jdtls = {
+          settings = {
+            java = {
+              configuration = {
+                runtimes = {
+                  {
+                    name = 'JavaSE-21',
+                    path = '/usr/lib/jvm/java-21-openjdk-amd64',
+                    default = true,
+                  },
+                },
+              },
+            },
+          },
+        },
       }
 
       -- Ensure the servers and tools above are installed
