@@ -12,7 +12,7 @@ vim.opt.mouse = 'a'
 vim.opt.showmode = false
 
 vim.schedule(function()
-  vim.opt.clipboard = 'unnamed'
+  vim.opt.clipboard = 'unnamedplus'
 end)
 
 vim.opt.breakindent = true

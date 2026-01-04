@@ -211,7 +211,42 @@ return {
         -- clangd = {},
         -- gopls = {},
         -- pyright = {},
-        -- rust_analyzer = {},
+        rust_analyzer = {
+          settings = {
+            ['rust-analyzer'] = {
+              cargo = {
+                allFeatures = true,
+                loadOutDirsFromCheck = true,
+                buildScripts = {
+                  enable = true,
+                },
+              },
+              checkOnSave = diagnostics == 'rust-analyzer',
+              diagnostics = {
+                enable = diagnostics == 'rust-analyzer',
+              },
+              procMacro = {
+                enable = true,
+              },
+              files = {
+                exclude = {
+                  '.direnv',
+                  '.git',
+                  '.jj',
+                  '.github',
+                  '.gitlab',
+                  'bin',
+                  'node_modules',
+                  'target',
+                  'venv',
+                  '.venv',
+                },
+                -- Avoid Roots Scanned hanging, see https://github.com/rust-lang/rust-analyzer/issues/12613#issuecomment-2096386344
+                watcher = 'client',
+              },
+            },
+          },
+        },
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
         -- Some languages (like typescript) have entire language plugins that can be useful:
