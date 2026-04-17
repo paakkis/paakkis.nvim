@@ -57,3 +57,29 @@ vim.opt.scrolloff = 10
 -- instead raise a dialog asking if you wish to save the current file(s)
 -- See `:help 'confirm'`
 vim.opt.confirm = true
+
+-- Default colorcolumn to 80 chars
+vim.opt.colorcolumn = '80'
+
+-- But set it to 100 chars when editing Kotlin
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'kotlin',
+  callback = function()
+    vim.opt_local.colorcolumn = '100'
+  end,
+})
+
+-- Set colorcolumn's color to slightly lighter than background
+vim.api.nvim_set_hl(0, 'ColorColumn', { ctermbg = 235, bg = '#262626' })
+
+-- Only show colorcolumn in the current window
+vim.api.nvim_create_autocmd('WinLeave', {
+  callback = function()
+    vim.opt_local.colorcolumn = '0'
+  end,
+})
+vim.api.nvim_create_autocmd('WinEnter', {
+  callback = function()
+    vim.opt_local.colorcolumn = '+0'
+  end,
+})

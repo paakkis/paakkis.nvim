@@ -1,1 +1,1 @@
-require('paakkis')
+require 'paakkis'
